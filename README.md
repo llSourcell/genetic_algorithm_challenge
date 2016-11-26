@@ -36,5 +36,5 @@ Step 4 - Post your GitHub link in the comments!
 
 Credits
 ===========
-Credit for the vast majority of code here goes to [Randy Olson](https://github.com/rhiever). I've merely created a wrapper around all of the important functions to get people started. 
+Credit for the vast majority of code here goes to [westphal](https://github.com/westphahl). I've merely created a wrapper around all of the important functions to get people started. 
 
