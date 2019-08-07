@@ -21,7 +21,7 @@ training_indices, validation_indices = training_indices, testing_indices = train
 #Let Genetic Programming find best ML model and hyperparameters
 tpot = TPOTClassifier(generations=5, verbosity=2)
 tpot.fit(tele.drop('Class', axis=1).loc[training_indices].values,
-	tele.loc[training_indicss, 'Class'].values)
+	tele.loc[training_indices, 'Class'].values)
 
 #Score the accuracy
 tpot.score(tele.drop('Class', axis=1).loc[validation_indices].values,
