@@ -8,7 +8,7 @@ This is the code for Genetic Algorithms by @Sirajology on [Youtube](https://yout
 Dependencies
 ============
 
-* Numpy 
+* NumPy 
 * tpot
 * scikit-learn
 * pandas
