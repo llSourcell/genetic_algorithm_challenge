@@ -6,18 +6,28 @@ import numpy as np
 #load the data
 telescope=pd.read_csv('MAGIC Gamma Telescope Data.csv')
 
-#clean the data
-telescope_shuffle=telescope.iloc[np.random.permutation(len(telescope))]
-tele=telescope_shuffle.reset_index(drop=True)
+ while l<=r:
+        
+        #finding the mid values
+        mid = int(l+(r-l) / 2)
 
-#Store 2 classes
-tele['Class']=tele['Class'].map({'g':0, 'h':1})
-tele_class = tele['Class'].values
+        #print(mid)
+        #print(type(mid))
+        
+        #checking condition if mid value is equal to search value or not
+        if(arr[mid] == x):
+            return mid
 
-#Split training, testing, and validation data
-training_indices, validation_indices = training_indices, testing_indices = train_test_split(tele.index,
-	stratify= tele_class, train_size=0.75, test_size=0.25)
+        #if not and value is greater than mid value ignore left part and increase its value 
+        elif arr[mid] < x:
+            l = mid+1
 
+
+        # if value less than mid value ignore right part and decrease right value by -1
+        else: 
+            r= mid-1
+       
+    return -1
 #Let Genetic Programming find best ML model and hyperparameters
 tpot = TPOTClassifier(generations=5, verbosity=2)
 tpot.fit(tele.drop('Class', axis=1).loc[training_indices].values,
